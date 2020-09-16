@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
+# import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
@@ -98,14 +98,15 @@ WSGI_APPLICATION = 'guesskaro.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+#postgres://lvtvtuymhodogn:dcddc4e67f6d878f6954b7f3b05089f15c93f0c307aec73895bac30049e383ec@ec2-52-202-146-43.compute-1.amazonaws.com:5432/de6ak3run3rb2u
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'guess',
-        'USER' : 'postgres',
-        'PASSWORD': 'root',
-        'HOST':'localhost',
+        'NAME': 'de6ak3run3rb2u',
+        'USER' : 'lvtvtuymhodogn',
+        'PASSWORD': 'dcddc4e67f6d878f6954b7f3b05089f15c93f0c307aec73895bac30049e383ec',
+        'HOST':'ec2-52-202-146-43.compute-1.amazonaws.com'
     }
 }
 
@@ -150,4 +151,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 STATIC_ROOT = os.path.join(BASE_DIR,'assets')
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
