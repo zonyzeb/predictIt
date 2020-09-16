@@ -4,12 +4,19 @@ from django.db import models
 from django.conf import settings
 
 # Create your models here.
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+    desc = models.TextField()
+    logo = models.ImageField(blank=True, null=True)
+    def __str__(self):
+        return self.name
+
 class Team(models.Model):
     name = models.CharField(max_length=100)
     status = models.IntegerField()
     point = models.IntegerField()
     desc =  models.TextField()
-    category = models.IntegerField(default=1)
+    category =  models.ForeignKey(Category, on_delete=models.CASCADE)
     logo = models.ImageField(blank=True, null=True)
     def __str__(self):
         return self.name
@@ -24,7 +31,7 @@ class Match(models.Model):
     #team_2 = models.ForeignKey(Team, on_delete=models.CASCADE)
     team_2 = models.ForeignKey(Team, related_name='%(class)s_team2',on_delete=models.CASCADE)
     credit = models.IntegerField(default=100)
-    category = models.IntegerField(default=1)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     def __str__(self):
         return self.name
 

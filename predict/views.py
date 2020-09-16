@@ -39,9 +39,24 @@ def match_date(request,date):
     print (dateval)
     print ("=====")
     matches = Match.objects.filter(match_date=dateval)
-    data = serializers.serialize('json',matches)
+    data = []
+    for match in matches:
+        
+        data.append({
+            "match_name": match.name,
+            "desc":  match.desc,
+            "team_1":  match.team_1.name,
+            "team_2":  match.team_2.name,
+            "date": match.match_date,
+            "match_credit": match.credit,
+            "category": match.category.name,
+        })
+    print(type(matches))
+    # data = serializers.serialize('json',data)
+
+
     # return HttpResponse(matches)
-    return HttpResponse(data, content_type="application/json")
+    return JsonResponse(data,safe=False)
 
 def team(request):
     teams = Team.objects.all();

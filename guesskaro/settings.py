@@ -103,10 +103,10 @@ WSGI_APPLICATION = 'guesskaro.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'de6ak3run3rb2u',
-        'USER' : 'lvtvtuymhodogn',
-        'PASSWORD': 'dcddc4e67f6d878f6954b7f3b05089f15c93f0c307aec73895bac30049e383ec',
-        'HOST':'ec2-52-202-146-43.compute-1.amazonaws.com'
+        'NAME': 'guess',
+        'USER' : 'postgres',
+        'PASSWORD': 'root',
+        'HOST':'localhost'
     }
 }
 
