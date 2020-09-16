@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-# import django_heroku
+import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
@@ -27,7 +27,7 @@ SECRET_KEY = '78=dxn*+(9j_njfyq^$5rza=@7n*vs0la49^1ttb73-@bf4)q#'
 DEBUG = True
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['whispering-shore-49497.herokuapp.com']
 SITE_ID = 2
 LOGIN_REDIRECT_URL = '/'
 
@@ -151,4 +151,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 STATIC_ROOT = os.path.join(BASE_DIR,'assets')
 
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
