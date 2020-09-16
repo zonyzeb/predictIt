@@ -23,9 +23,10 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '78=dxn*+(9j_njfyq^$5rza=@7n*vs0la49^1ttb73-@bf4)q#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['172.18.7.129','localhost','127.0.0.1']
+
+ALLOWED_HOSTS = []
 SITE_ID = 2
 LOGIN_REDIRECT_URL = '/'
 
