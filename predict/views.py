@@ -84,8 +84,14 @@ def result(request):
     #return render(request,'match.html',{'matches': matches})
 
 def leader_board(request):
+    leaderBoard = UserData.objects.all()
 
-
+    if(leaderBoard != None):
+        data = serializers.serialize('json',leaderBoard)
+       # return HttpResponse(matches)
+        return HttpResponse(data, content_type="application/json")
+    else:
+        return None
 
 def year_archive(request,year):
     return HttpResponse("Hello1..")
