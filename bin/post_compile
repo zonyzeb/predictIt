@@ -6,4 +6,3 @@
 echo "=> Performing database migrations..."
 python manage.py makemigrations predict
 python manage.py migrate
-echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'zonyzeb@gmail.com', 'Admin@12321')" | python manage.py shell
