@@ -27,7 +27,7 @@ SECRET_KEY = '78=dxn*+(9j_njfyq^$5rza=@7n*vs0la49^1ttb73-@bf4)q#'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['whispering-shore-49497.herokuapp.com','localhost']
+ALLOWED_HOSTS = ['52.66.203.54','localhost']
 SITE_ID = 2
 LOGIN_REDIRECT_URL = '/'
 
@@ -85,10 +85,10 @@ WSGI_APPLICATION = 'guesskaro.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'guess',
+        'NAME': 'predictit',
         'USER' : 'postgres',
-        'PASSWORD': 'root',
-        'HOST':'localhost'
+        'PASSWORD': 'HkLmM6GjzZI5',
+        'HOST':'localhost',
     }
 }
 
