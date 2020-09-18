@@ -22,5 +22,5 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name="social_app/index.html")),
     path('predict/', include('predict.urls')),
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
+    #path('accounts/', include('allauth.urls')),
 ]
