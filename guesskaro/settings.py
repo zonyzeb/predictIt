@@ -31,18 +31,6 @@ ALLOWED_HOSTS = ['whispering-shore-49497.herokuapp.com','localhost']
 SITE_ID = 2
 LOGIN_REDIRECT_URL = '/'
 
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        'SCOPE': [
-            'profile',
-            'email',
-        ],
-        'AUTH_PARAMS': {
-            'access_type': 'online',
-        }
-    }
-}
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -53,13 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'predict.apps.PredictConfig',
-    'django.contrib.sites',  
-    'social_app',  
-    'allauth',  
-    'allauth.account',  
-    'allauth.socialaccount', 
-    'allauth.socialaccount.providers.google',
-    
+    'django.contrib.sites',    
 ]
 
 MIDDLEWARE = [
@@ -75,7 +57,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'guesskaro.urls'
 AUTHENTICATION_BACKENDS = (
  'django.contrib.auth.backends.ModelBackend',
- 'allauth.account.auth_backends.AuthenticationBackend',
+ #'allauth.account.auth_backends.AuthenticationBackend',
  )
 TEMPLATES = [
     {
