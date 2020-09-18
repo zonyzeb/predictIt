@@ -22,6 +22,8 @@ urlpatterns = [
     path('match', views.match,name="match"),
     path('team', views.team,name="team"),
     path('result', views.result,name="result"),
-    #path('matches/<int:year>/<int:month>/<int:date>/', views.match_date_archive),
+    path('leader_board',views.leader_board,name="leader_board"),
     path('matches/<str:date>/', views.match_date),
+    path('matches/upcoming', views.match_upcoming),
+    path('matches/prediction', views.match_predict),
 ]

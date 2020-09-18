@@ -61,7 +61,7 @@ class Prediction(models.Model):
     match_id = models.ForeignKey(Match, on_delete=models.CASCADE)
     user_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     winning_team = models.ForeignKey(Team, on_delete=models.CASCADE)
-    loosing_team = models.ForeignKey(Team, related_name='%(class)s_loosing',on_delete=models.CASCADE)
+    # loosing_team = models.ForeignKey(Team, related_name='%(class)s_loosing',on_delete=models.CASCADE)
     is_draw = models.BooleanField()
     comments = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
