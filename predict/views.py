@@ -121,8 +121,13 @@ def match_predict(request):
             comments = comments,
             created_at = date_predicted,
         )
-        pr.save()
-        data.append(values_dict)
+        try:
+            pr.save()
+            values_dict = {"message" : "Success"}
+            data.append(values_dict)
+        except Exception as e:
+            values_dict = {"message" : e}
+            data.append(values_dict)
         return HttpResponse(data)
 
 def index(request):
