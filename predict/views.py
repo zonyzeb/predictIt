@@ -15,7 +15,7 @@ def match_date(request,date):
     permission_classes = (IsAuthenticated,) 
     from datetime import datetime
     dateval = datetime.strptime(date, "%Y-%m-%d").date()
-    matches = Match.objects.filter(match_date=dateval)
+    matches = Match.objects.filter(match_date=dateval).order_by("match_date")
     data = []
     if len(matches) > 0 :
         for match in matches:
@@ -44,7 +44,7 @@ def match(request):
 @api_view(['GET'])
 @permission_classes((IsAuthenticated,))
 def match_upcoming(request):
-    matches = Match.objects.filter(status__name='Scheduled')
+    matches = Match.objects.filter(status__name='Scheduled').order_by("match_date")
     data = []
     if len(matches) > 0 :
         for match in matches:
