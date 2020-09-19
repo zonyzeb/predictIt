@@ -42,8 +42,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'predict.apps.PredictConfig',
     'django.contrib.sites',    
-]
+    'rest_framework',
+    'rest_framework.authtoken',
 
+]
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',  
+    ],
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -85,9 +92,9 @@ WSGI_APPLICATION = 'guesskaro.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'predictit',
+        'NAME': 'guess',
         'USER' : 'postgres',
-        'PASSWORD': 'HkLmM6GjzZI5',
+        'PASSWORD': 'root',
         'HOST':'localhost',
     }
 }
