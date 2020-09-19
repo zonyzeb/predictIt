@@ -8,7 +8,6 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import api_view, permission_classes
-from django.views.decorators.csrf import csrf_exempt
 
 @api_view(['GET'])
 @permission_classes((IsAuthenticated,))
@@ -94,7 +93,6 @@ def leader_board(request):
     else:
         return None
 
-@csrf_exempt
 @api_view(['POST'])
 @permission_classes((IsAuthenticated,))
 def match_predict(request):
