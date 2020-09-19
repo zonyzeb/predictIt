@@ -100,9 +100,9 @@ WSGI_APPLICATION = 'guesskaro.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'guess',
+        'NAME': 'predictit',
         'USER' : 'postgres',
-        'PASSWORD': 'root',
+        'PASSWORD': 'HkLmM6GjzZI5',
         'HOST':'localhost',
     }
 }

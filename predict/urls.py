@@ -28,5 +28,5 @@ urlpatterns = [
     path('matches/upcoming', views.match_upcoming),
     path('matches/prediction', views.match_predict),
     # path('hello/', views.HelloView.as_view(), name='hello'),
-    path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
+    path('login', obtain_auth_token, name='api_token_auth'),
 ]

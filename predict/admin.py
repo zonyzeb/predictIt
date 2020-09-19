@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
 
 # Register your models here.
-from .models import Category, Team, Prediction, Match, MatchStatus, Venue, UserData
+from .models import Category, Team, Prediction, Match, MatchStatus, Venue, UserData, MatchResult
 
 
 class UserDataInline(admin.StackedInline):
@@ -26,3 +26,5 @@ admin.site.register(Match)
 admin.site.register(MatchStatus)
 admin.site.register(Venue)
 admin.site.register(UserData)
+admin.site.register(Prediction)
+admin.site.register(MatchResult)
