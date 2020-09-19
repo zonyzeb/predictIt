@@ -55,6 +55,8 @@ def match_upcoming(request):
                 "desc":  match.desc,
                 "team_1":  match.team_1.name,
                 "team_2":  match.team_2.name,
+                "team_1_logo":  match.team_1.logo,
+                "team_2_logo":  match.team_2.logo,
                 "date": match.match_date,
                 "match_credit": match.credit,
                 "category": match.category.name,
