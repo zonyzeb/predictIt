@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from rest_framework.authtoken.views import obtain_auth_token
 
 from . import views
 urlpatterns = [
@@ -26,4 +27,6 @@ urlpatterns = [
     path('matches/<str:date>/', views.match_date),
     path('matches/upcoming', views.match_upcoming),
     path('matches/prediction', views.match_predict),
+    # path('hello/', views.HelloView.as_view(), name='hello'),
+    path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
 ]
